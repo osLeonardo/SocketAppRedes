@@ -1,0 +1,14 @@
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\bin\Debug\net8.0\ClientProgram.exe
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\bin\Debug\net8.0\ClientProgram.deps.json
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\bin\Debug\net8.0\ClientProgram.runtimeconfig.json
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\bin\Debug\net8.0\ClientProgram.dll
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\bin\Debug\net8.0\ClientProgram.pdb
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ClientProgram.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ClientProgram.AssemblyInfoInputs.cache
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ClientProgram.AssemblyInfo.cs
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ClientProgram.csproj.CoreCompileInputs.cache
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ClientProgram.dll
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\refint\ClientProgram.dll
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ClientProgram.pdb
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ClientProgram.genruntimeconfig.cache
+C:\Users\leona\RiderProjects\SocketAppRedes\ClientProgram\obj\Debug\net8.0\ref\ClientProgram.dll

@@ -1,0 +1,14 @@
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\bin\Debug\net8.0\HostProgram.exe
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\bin\Debug\net8.0\HostProgram.deps.json
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\bin\Debug\net8.0\HostProgram.runtimeconfig.json
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\bin\Debug\net8.0\HostProgram.dll
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\bin\Debug\net8.0\HostProgram.pdb
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\HostProgram.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\HostProgram.AssemblyInfoInputs.cache
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\HostProgram.AssemblyInfo.cs
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\HostProgram.csproj.CoreCompileInputs.cache
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\HostProgram.dll
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\refint\HostProgram.dll
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\HostProgram.pdb
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\HostProgram.genruntimeconfig.cache
+C:\Users\leona\RiderProjects\SocketAppRedes\HostProgram\obj\Debug\net8.0\ref\HostProgram.dll
