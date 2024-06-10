@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b+J/1LnTT7wFsMUimfYLW5cTqTMS0yHp3NzKU6HieUYyT0YsjcCYVY5v5xl8h7xfg1aIpgWzWapRBooKUaqZ0A==",
+  "dgSpecHash": "QsZ5OV7rDma0VMmiVSvyjVKy+y/DnA6al9O/RTGsktij5sa5zgllpvd89vLkZEPYhoDah6THVe6laZf3x0mGYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\leona\\RiderProjects\\SocketAppRedes\\HostProgram\\HostProgram.csproj",
+  "projectFilePath": "/home/leonardo.spilere/Documents/Personal-Repositories/SocketAppRedes/HostProgram/HostProgram.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

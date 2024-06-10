@@ -5,77 +5,67 @@ using System.Text;
 using System.Threading;
 using System.Collections.Generic;
 
-class ClientProgram
+class HostProgram
 {
-    static List<Socket> _clientSockets = new();
-    static Socket _serverSocket = new(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-    const string SERVER_IP = "192.168.101.7";
-    const int PORT = 8080;
+    private static TcpListener _server = new(IPAddress.Any, 8000);
+    private static List<TcpClient> _clients = new();
 
     static void Main(string[] args)
     {
-        Console.Title = "Server";
-        SetupServer();
-        Console.ReadLine();
-        CloseAllSockets();
+        new HostProgram().Start();
     }
 
-    private static void SetupServer()
+    public void Start()
     {
-        Console.WriteLine("Setting up server...");
-        IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse(SERVER_IP), PORT);
-        _serverSocket.Bind(endPoint);
-        _serverSocket.Listen(5);
-        _serverSocket.BeginAccept(new AsyncCallback(AcceptCallback), null);
-        Console.WriteLine("Server setup complete on: " + endPoint);
-    }
+        _server.Start();
+        Console.Clear();
+        Console.WriteLine("Server started.");
 
-    private static void AcceptCallback(IAsyncResult result)
-    {
-        Socket socket = _serverSocket.EndAccept(result);
-        _clientSockets.Add(socket);
-        socket.BeginReceive(new byte[] { 0 }, 0, 0, 0, ReceiveCallback, socket);
-        Console.WriteLine("Client connected");
-        _serverSocket.BeginAccept(new AsyncCallback(AcceptCallback), null);
-    }
-
-    private static void ReceiveCallback(IAsyncResult result)
-    {
-        Socket current = (Socket)result.AsyncState;
-        int received;
-        try { received = current.EndReceive(result); }
-        catch (SocketException)
+        while (true)
         {
-            Console.WriteLine("Client forcibly disconnected");
-            current.Close();
-            _clientSockets.Remove(current);
-            return;
+            TcpClient client = _server.AcceptTcpClient();
+            _clients.Add(client);
+
+            Console.WriteLine(client.Client.RemoteEndPoint + " connected to the server.");
+            Thread clientThread = new Thread(() => HandleClient(client));
+            clientThread.Start();
         }
-
-        if (received > 0)
-        {
-            byte[] buffer = new byte[received];
-            current.Receive(buffer, buffer.Length, SocketFlags.None);
-            string text = Encoding.ASCII.GetString(buffer);
-            Console.WriteLine("Received Text: " + text);
-
-            string response = $"{current.RemoteEndPoint} - {DateTime.Now}: {text}";
-            byte[] data = Encoding.ASCII.GetBytes(response);
-        
-            foreach (Socket socket in _clientSockets) { socket.Send(data); }
-        }
-
-        current.BeginReceive(new byte[] { 0 }, 0, 0, 0, ReceiveCallback, current);
     }
 
-    private static void CloseAllSockets()
+    private void HandleClient(TcpClient client)
     {
-        foreach (Socket socket in _clientSockets)
+        while (true)
         {
-            socket.Shutdown(SocketShutdown.Both);
-            socket.Close();
-        }
+            NetworkStream stream = client.GetStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead = stream.Read(buffer, 0, buffer.Length);
 
-        _serverSocket.Close();
+            if (bytesRead == 0)
+            {
+                Console.WriteLine(client.Client.RemoteEndPoint + " disconnected from the server.");
+                _clients.Remove(client);
+                client.Close();
+                break;
+            }
+
+            string username = client.Client.RemoteEndPoint.ToString().Split(":")[1];
+            string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+            string formattedMessage = $"{username}: {message}";
+
+            BroadcastMessage(formattedMessage, client);
+        }
+    }
+
+    private void BroadcastMessage(string message, TcpClient senderClient)
+    {
+        byte[] buffer = Encoding.UTF8.GetBytes(message);
+
+        foreach (TcpClient client in _clients)
+        {
+            if (client == senderClient) continue;
+            
+            NetworkStream stream = client.GetStream();
+            stream.Write(buffer, 0, buffer.Length);
+        }
     }
 }
