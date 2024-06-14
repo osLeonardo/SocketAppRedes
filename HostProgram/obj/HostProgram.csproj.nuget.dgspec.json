@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/leonardo.spilere/Documents/Personal-Repositories/SocketAppRedes/HostProgram/HostProgram.csproj": {}
+    "C:\\Users\\leona\\RiderProjects\\SocketAppRedes\\HostProgram\\HostProgram.csproj": {}
   },
   "projects": {
-    "/home/leonardo.spilere/Documents/Personal-Repositories/SocketAppRedes/HostProgram/HostProgram.csproj": {
+    "C:\\Users\\leona\\RiderProjects\\SocketAppRedes\\HostProgram\\HostProgram.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/leonardo.spilere/Documents/Personal-Repositories/SocketAppRedes/HostProgram/HostProgram.csproj",
+        "projectUniqueName": "C:\\Users\\leona\\RiderProjects\\SocketAppRedes\\HostProgram\\HostProgram.csproj",
         "projectName": "HostProgram",
-        "projectPath": "/home/leonardo.spilere/Documents/Personal-Repositories/SocketAppRedes/HostProgram/HostProgram.csproj",
-        "packagesPath": "/home/leonardo.spilere/.nuget/packages/",
-        "outputPath": "/home/leonardo.spilere/Documents/Personal-Repositories/SocketAppRedes/HostProgram/obj/",
+        "projectPath": "C:\\Users\\leona\\RiderProjects\\SocketAppRedes\\HostProgram\\HostProgram.csproj",
+        "packagesPath": "C:\\Users\\leona\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\leona\\RiderProjects\\SocketAppRedes\\HostProgram\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/leonardo.spilere/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\leona\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -58,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/leonardo.spilere/.dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 class HostProgram
 {
-    private static TcpListener _server = new(IPAddress.Any, 8000);
+    private static TcpListener _server = new(GetLocalIpAddress(), 8000);
     private static List<TcpClient> _clients = new();
 
     static void Main(string[] args)
@@ -19,7 +19,7 @@ class HostProgram
     {
         _server.Start();
         Console.Clear();
-        Console.WriteLine("Server started.");
+        Console.WriteLine("Server started on " + GetLocalIpAddress() + ":8000");
 
         while (true)
         {
@@ -67,5 +67,15 @@ class HostProgram
             NetworkStream stream = client.GetStream();
             stream.Write(buffer, 0, buffer.Length);
         }
+    }
+    
+    public static IPAddress GetLocalIpAddress()
+    {
+        var host = Dns.GetHostEntry(Dns.GetHostName());
+        foreach (var ip in host.AddressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork) return ip;
+        }
+        throw new Exception("No network adapters with an IPv4 address in the system!");
     }
 }

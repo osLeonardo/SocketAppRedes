@@ -31,7 +31,7 @@ class ClientProgram
 
     public ClientProgram()
     {
-        _client = new TcpClient("127.0.0.1", 8000);
+        _client = new TcpClient("192.168.101.13", 8000);
         _stream = _client.GetStream();
     }
 
