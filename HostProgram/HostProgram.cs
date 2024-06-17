@@ -7,7 +7,8 @@ using System.Collections.Generic;
 
 class HostProgram
 {
-    private static TcpListener _server = new(GetLocalIpAddress(), 8000);
+    private static IPAddress _ipAddress = IPAddress.Parse("CHECHAR IP DO PC LAB");
+    private static TcpListener _server = new(_ipAddress, 8000);
     private static List<TcpClient> _clients = new();
 
     static void Main(string[] args)
@@ -19,14 +20,15 @@ class HostProgram
     {
         _server.Start();
         Console.Clear();
-        Console.WriteLine("Server started on " + GetLocalIpAddress() + ":8000");
+        Console.WriteLine("Server started on " + _ipAddress + ":8000");
+        Console.WriteLine("=====================================\n");
 
         while (true)
         {
             TcpClient client = _server.AcceptTcpClient();
             _clients.Add(client);
 
-            Console.WriteLine(client.Client.RemoteEndPoint + " connected to the server.");
+            Console.WriteLine("+ " + client.Client.RemoteEndPoint + " connected to the server.");
             Thread clientThread = new Thread(() => HandleClient(client));
             clientThread.Start();
         }
@@ -42,7 +44,7 @@ class HostProgram
 
             if (bytesRead == 0)
             {
-                Console.WriteLine(client.Client.RemoteEndPoint + " disconnected from the server.");
+                Console.WriteLine("- " + client.Client.RemoteEndPoint + " disconnected from the server.");
                 _clients.Remove(client);
                 client.Close();
                 break;
